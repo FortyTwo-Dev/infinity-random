@@ -1,0 +1,4 @@
+/**
+ * @file types.ts
+ * Description.
+ */
