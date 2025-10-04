@@ -1,48 +1,23 @@
-# infinity-random
+# 🔗 Infinity Random – Free, Simple, and Open-Source Secure Random Number Generator
 
-This template should help get you started developing with Vue 3 in Vite.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Recommended IDE Setup
+Random Number Generator est un outil gratuit, simple et open-source pour générer des nombres aléatoires de manière sécurisée et efficace. Idéal pour les jeux, les simulations ou toute application nécessitant des valeurs aléatoires fiables.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+# ✨ Features
+- **Free & Open-Source** : No hidden costs, no advertising, completely transparent.
+- **Secure** : Use the browser's crypto API for cryptographically secure generation.
+- **Customizable** : Set a minimum and maximum range according to your needs.
+- **Privacy-Friendly**: All processing happens client-side—no data is sent to servers.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 🛠️ Tech Stack
+- **Frontend**: HTML, CSS, JavaScript, Vue.js, TypeScript
+- API : Web Crypto API
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+📄 License
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
+This project is licensed under the MIT License – see the [LICENSE](https://github.com/FortyTwo-Dev/infinity-random/blob/main/LICENSE) file for details.
