@@ -53,15 +53,15 @@ initialize();
 </script>
 
 <template>
-  <main class="flex-grow w-full h-full grid grid-cols-3 bg-background text-foreground py-4">
+  <main class="flex-grow w-full h-full xl:grid grid-cols-3 bg-background text-foreground py-4">
 
-    <section id="left" class="content-center mx-auto">
+    <section id="left" class="not-xl:hidden content-center mx-auto">
       <Label id="min" label="Minimun" class="block text-4xl font-semibold text-center pb-8"></Label>
-      <Input id="min" placeholder="0" type="number" v-model="min"></Input>
+      <Input id="min" placeholder="0" type="number" v-model="min" class="h-24 text-4xl"></Input>
     </section>
 
     <section id="middle"
-      class="w-full h-full flex flex-col gap-16 justify-between items-center py-16 px-28 border-x border-primary">
+      class="w-full h-full flex flex-col gap-16 justify-between items-center py-16 xl:px-28 px-4 border-x border-primary">
 
       <h2 class="text-4xl font-semibold text-center">Secure random number</h2>
 
@@ -69,12 +69,23 @@ initialize();
         <p class="text-9xl mx-auto">{{ randomNumber }}</p>
       </div>
 
-      <Button tabindex="0" @click="handleClickRandomButton" @keydown="handleKeyDown" variant="primary" class="w-full">Generate</Button>
+      <div class="xl:hidden flex flex-col gap-2">
+
+        <Label id="min_mobile" label="Minimun" class="text-xl font-semibold text-center"></Label>
+        <Input id="min_mobile" placeholder="0" type="number" v-model="min" class="h-11 text-xl"></Input>
+
+        <Label id="max_mobile" label="Maximun" class="text-xl font-semibold text-center"></Label>
+        <Input id="max_mobile" placeholder="10" type="number" v-model="max" class="h-11 text-xl"></Input>
+
+      </div>
+
+      <Button tabindex="0" @click="handleClickRandomButton" @keydown="handleKeyDown" variant="primary"
+        class="w-full h-16">Generate</Button>
     </section>
 
-    <section id="right" class="content-center mx-auto">
+    <section id="right" class="not-xl:hidden content-center mx-auto">
       <Label id="max" label="Maximun" class="block text-4xl font-semibold text-center pb-8"></Label>
-      <Input id="max" placeholder="10" type="number" v-model="max"></Input>
+      <Input id="max" placeholder="10" type="number" v-model="max" class="h-24 text-4xl"></Input>
     </section>
 
   </main>
