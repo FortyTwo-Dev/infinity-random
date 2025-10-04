@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getRandomNumberBetween } from '@/composables/useGetRandomNumberBetween';
+import { useGetRandomNumberBetween } from '@/composables/useGetRandomNumberBetween';
 import { onMounted, onUnmounted, ref } from 'vue';
 import { Button, Input, Label } from '@/components/ui';
 
@@ -11,7 +11,7 @@ const max = ref<number>(10); // Assure-toi que max a une valeur > min
 const handleClickRandomButton = () => {
   if (max.value > min.value) {
     try {
-      randomNumber.value = getRandomNumberBetween(min, max);
+      randomNumber.value = useGetRandomNumberBetween(min, max);
     } catch (error) {
       console.error("Error generating random number:", error);
       alert("An error has occurred. Please verify that max > min and that your browser is up to date.");
@@ -28,7 +28,7 @@ const handleKeyDown = (event: KeyboardEvent) => {
     event.preventDefault();
     if (max.value > min.value) {
       try {
-        randomNumber.value = getRandomNumberBetween(min, max);
+        randomNumber.value = useGetRandomNumberBetween(min, max);
       } catch (error) {
         console.error("Error generating random number:", error);
         alert("An error has occurred. Please verify that max > min and that your browser is up to date.");
@@ -46,7 +46,7 @@ onUnmounted(() => {
 });
 
 const initialize = () => {
-  randomNumber.value = getRandomNumberBetween(min, max);
+  randomNumber.value = useGetRandomNumberBetween(min, max);
 }
 
 initialize();

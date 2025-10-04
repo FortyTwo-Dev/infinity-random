@@ -1,6 +1,6 @@
-import { ref, type Ref } from 'vue';
+import { type Ref } from 'vue';
 
-export function getRandomNumberBetween(min: Ref<number>, max: Ref<number>): number {
+export function useGetRandomNumberBetween(min: Ref<number>, max: Ref<number>): number {
   const range = max.value - min.value + 1;
   const bytesNeeded = Math.ceil(Math.log2(range) / 8);
   const randomBytes = new Uint8Array(bytesNeeded);
@@ -13,7 +13,7 @@ export function getRandomNumberBetween(min: Ref<number>, max: Ref<number>): numb
 
   let randomValue = 0;
   for (let i = 0; i < bytesNeeded; i++) {
-    randomValue = (randomValue << 8) | randomBytes[i];
+    randomValue = (randomValue << 8) | randomBytes[i]!;
   }
   
   return min.value + (randomValue % range);
