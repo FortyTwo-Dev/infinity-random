@@ -16,7 +16,7 @@ const appVersion = __APP_VERSION__;
     <footer class="bg-secondary text-foreground not-lg:pb-18 py-6 w-full h-full flex gap-2 items-center justify-center text-center">
       <h4 class="text-lg font-semibold">Infinity Random</h4> 
       <p>- {{ new Date().getFullYear() }} -</p> 
-      <!-- <a href="https://github.com/FortyTwo-Dev/infinity-status-frontend" class=" hover:text-primary">Github</a> -->
+      <a href="https://github.com/FortyTwo-Dev/infinity-random" class=" hover:text-primary">Github</a>
       <p>- V {{ appVersion }}</p> 
     </footer>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getRandomNumberBetween } from '@/composables/useGetRandomNumberBetween';
-import { ref } from 'vue';
-import { Button, Input } from '@/components/ui';
+import { onMounted, onUnmounted, ref } from 'vue';
+import { Button, Input, Label } from '@/components/ui';
 
 // Initialise les refs avec des valeurs par défaut
 const randomNumber = ref<number>(0);
@@ -19,6 +19,32 @@ const handleClickRandomButton = () => {
   }
 }
 
+// const handleSpaceKey = (event: KeyboardEvent) => {
+
+// };
+
+const handleKeyDown = (event: KeyboardEvent) => {
+  if (event.code === 'Space') {
+    event.preventDefault();
+    if (max.value > min.value) {
+      try {
+        randomNumber.value = getRandomNumberBetween(min, max);
+      } catch (error) {
+        console.error("Error generating random number:", error);
+        alert("An error has occurred. Please verify that max > min and that your browser is up to date.");
+      }
+    }
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeyDown);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyDown);
+});
+
 const initialize = () => {
   randomNumber.value = getRandomNumberBetween(min, max);
 }
@@ -30,7 +56,7 @@ initialize();
   <main class="flex-grow w-full h-full grid grid-cols-3 bg-background text-foreground py-4">
 
     <section id="left" class="content-center mx-auto">
-      <h2 class="text-4xl font-semibold text-center pb-8">Minimun</h2>
+      <Label id="min" label="Minimun" class="block text-4xl font-semibold text-center pb-8"></Label>
       <Input id="min" placeholder="0" type="number" v-model="min"></Input>
     </section>
 
@@ -43,11 +69,11 @@ initialize();
         <p class="text-9xl mx-auto">{{ randomNumber }}</p>
       </div>
 
-      <Button @click="handleClickRandomButton" variant="primary" class="w-full">Generate</Button>
+      <Button tabindex="0" @click="handleClickRandomButton" @keydown="handleKeyDown" variant="primary" class="w-full">Generate</Button>
     </section>
 
     <section id="right" class="content-center mx-auto">
-      <h2 class="text-4xl font-semibold text-center pb-8">Maximun</h2>
+      <Label id="max" label="Maximun" class="block text-4xl font-semibold text-center pb-8"></Label>
       <Input id="max" placeholder="10" type="number" v-model="max"></Input>
     </section>
 
