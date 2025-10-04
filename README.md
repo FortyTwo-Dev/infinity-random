@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Random Number Generator est un outil gratuit, simple et open-source pour générer des nombres aléatoires de manière sécurisée et efficace. Idéal pour les jeux, les simulations ou toute application nécessitant des valeurs aléatoires fiables.
+Infinity Random is a free, simple, and open-source tool for generating random numbers securely and efficiently.
 
 ---
 
